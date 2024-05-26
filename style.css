@@ -1,8 +1,17 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
 .conteiner {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -26,14 +35,6 @@
 .image h1 {
     font-size: 3em;
 }
-img{
-    max-width: 100%;
-    max-height: 350px;
-    cursor: pointer;
-    min-width: 100px;
-    min-height: 100px;
-    
-}
 input[type="file"] {
     font-size: 0;
 }
@@ -48,14 +49,16 @@ input[type="color"] {
 
 input[type="text"] {
     font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #cor-label {
     font-size: 25px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     color: rgb(128, 36, 0);
+    margin-bottom: 10px;
 }
 
 .formulario {
@@ -64,16 +67,14 @@ input[type="text"] {
     align-items: center;
     margin: auto;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 300px;
+    width: 90%;
+    max-width: 400px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.514);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
 }
 
 .formulario > * {
@@ -89,27 +90,33 @@ span {
     display: none;
 }
 
-/* Responsiveness */
+/* Defina tamanhos mínimos e máximos mais adequados para a imagem */
+img {
+    max-width: 90vw;
+    max-height: 60vh;
+    cursor: pointer;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+/* Responsividade adicional */
 @media (max-width: 600px) {
     .formulario {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-    }
-
-    .formulario input[type="text"],
-    .formulario input[type="file"],
-    .formulario input[type="submit"],
-    .formulario input[type="reset"] {
         width: 100%;
-        margin: 5px 0;
+        padding: 20px;
     }
 
     #cor-label {
         font-size: 20px;
     }
-    #back{
+
+    #back {
         max-width: 50px;
+    }
+
+    .conteiner, .image {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -124,7 +131,8 @@ span {
     .formulario input[type="reset"] {
         font-size: 14px;
     }
-    #back{
-        max-width: 100px;
+
+    #back {
+        max-width: 30px;
     }
 }
