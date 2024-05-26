@@ -28,6 +28,7 @@ body {
     width: 100%;
     max-width: 600px;
     position: relative;
+    margin-top: 60px; /* Add margin to avoid overlap with the back button */
 }
 
 .image h1 {
@@ -83,8 +84,7 @@ input[type="text"] {
 }
 
 .formulario > * {
-    margin: 10px 0;
-    width: 100%;
+    margin: 3px;
 }
 
 span {
@@ -98,8 +98,8 @@ span {
 
 #back {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 10px; /* Adjusted to ensure visibility */
+    left: 10px;
     z-index: 1000;
     cursor: pointer;
     max-width: 50px;
@@ -141,6 +141,10 @@ span {
 }
 
 @media (max-width: 400px) {
+    body {
+        flex-direction: column;
+    }
+
     #cor-label {
         font-size: 18px;
     }
