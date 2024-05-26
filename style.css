@@ -14,6 +14,15 @@ body {
     flex-direction: column;
 }
 
+#back {
+    position: fixed;
+    top: 10px; /* Ensure visibility */
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+    max-width: 50px;
+}
+
 .conteiner {
     border: 1px solid;
     background-color: #ffffff;
@@ -28,7 +37,7 @@ body {
     width: 100%;
     max-width: 600px;
     position: relative;
-    margin-top: 60px; /* Add margin to avoid overlap with the back button */
+    margin-top: 100px; /* Increase margin-top to avoid overlap with the back button */
 }
 
 .image h1 {
@@ -96,15 +105,6 @@ span {
     display: none;
 }
 
-#back {
-    position: fixed;
-    top: 10px; /* Adjusted to ensure visibility */
-    left: 10px;
-    z-index: 1000;
-    cursor: pointer;
-    max-width: 50px;
-}
-
 /* Responsividade adicional */
 @media (max-width: 600px) {
     body {
@@ -121,7 +121,10 @@ span {
     }
 
     #back {
-        max-width: 50px;
+        max-width: 30px;
+        top: 10px; /* Adjust top for mobile */
+        left: 10px; /* Adjust left for mobile */
+        position: fixed;
     }
 
     .conteiner, .image {
@@ -131,6 +134,7 @@ span {
 
     .conteiner {
         padding: 20px;
+        margin-top: 120px; /* Increase margin-top to avoid overlap with the back button */
     }
 
     img {
@@ -157,6 +161,9 @@ span {
     }
 
     #back {
-        max-width: 30px;
+        max-width: 20px;
+        top: 10px; /* Ensure visibility */
+        left: 10px; /* Ensure visibility */
+        position: fixed;
     }
 }
