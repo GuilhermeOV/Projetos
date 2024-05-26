@@ -98,8 +98,8 @@ span {
 
 #back {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    left: 5px;
     z-index: 1000;
     cursor: pointer;
     max-width: 50px;
