@@ -16,7 +16,7 @@ body {
 
 #back {
     position: fixed;
-    top: 10px; 
+    top: 10px; /* Ensure visibility */
     left: 10px;
     z-index: 1000;
     cursor: pointer;
@@ -37,7 +37,8 @@ body {
     width: 100%;
     max-width: 600px;
     position: relative;
-    margin-top: 100px; }
+    margin-top: 100px; /* Increase margin-top to avoid overlap with the back button */
+}
 
 .image h1 {
     font-size: 3em;
@@ -49,7 +50,7 @@ img {
     cursor: pointer;
     min-width: 150px;
     min-height: 150px;
-    margin: 10px 0;
+    margin: 10px 0; /* Add margin to avoid overlap */
 }
 
 input[type="file"] {
@@ -100,14 +101,17 @@ span {
     height: 20px;
 }
 
-h1{
+h1 {
     text-align: center;
     font-size: 3em;
+    margin-top: 20px;
 }
+
 .hiden {
     display: none;
 }
 
+/* Responsividade adicional */
 @media (max-width: 600px) {
     body {
         flex-direction: column;
@@ -124,8 +128,8 @@ h1{
 
     #back {
         max-width: 30px;
-        top: 10px; 
-        left: 10px; 
+        top: 10px; /* Adjust top for mobile */
+        left: 10px; /* Adjust left for mobile */
         position: fixed;
     }
 
@@ -136,12 +140,13 @@ h1{
 
     .conteiner {
         padding: 20px;
-        margin-top: 120px; }
+        margin-top: 120px; /* Increase margin-top to avoid overlap with the back button */
+    }
 
     img {
         max-width: 100%;
-        max-height: 50vh;
-        margin: 10px 0; 
+        max-height: 50vh; /* Adjust max-height to prevent overlap */
+        margin: 10px 0; /* Add margin to avoid overlap */
     }
 }
 
@@ -163,8 +168,8 @@ h1{
 
     #back {
         max-width: 20px;
-        top: 10px; 
-        left: 10px; 
+        top: 10px; /* Ensure visibility */
+        left: 10px; /* Ensure visibility */
         position: fixed;
     }
 }
