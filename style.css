@@ -48,10 +48,11 @@ h1 {
 
 img {
     max-width: 90vw;
-    max-height: 60vh;
+    max-height: 90vh;
     cursor: pointer;
     min-width: 150px;
     min-height: 150px;
+    display: block; /* Adiciona essa propriedade para remover espaços em branco extras */
     margin: auto; /* Centraliza vertical e horizontalmente */
 }
 
