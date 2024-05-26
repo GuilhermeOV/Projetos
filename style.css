@@ -44,7 +44,6 @@ h1 {
     font-size: 3em;
     text-align: center; /* Centraliza horizontalmente */
     margin: 20px 0; /* Adiciona margem vertical para centralizar */
-    flex: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
 }
 
 img {
@@ -53,7 +52,7 @@ img {
     cursor: pointer;
     min-width: 150px;
     min-height: 150px;
-    margin: 10px 0; /* Add margin to avoid overlap */
+    margin: auto; /* Centraliza vertical e horizontalmente */
 }
 
 input[type="file"] {
