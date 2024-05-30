@@ -47,8 +47,9 @@ form::before {
 
 header {
     background-color: rgba(255, 255, 255, 0.473);
-    width: 80%;
+    width: 100%;
     text-align: center;
+    justify-content: center;
     max-width: 100%;
 }
 
