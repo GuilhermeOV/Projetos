@@ -1,0 +1,107 @@
+@charset "UTF-8";
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(imagens/wood.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    width: 80vh;
+    position: relative;
+    max-width: 500px;
+}
+
+form button, form input {
+    margin: 5px;
+    font-size: 15px;
+}
+
+form input {
+    margin-top: 5%;
+}
+
+form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(imagens/paper.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.473);
+    width: 80%;
+    text-align: center;
+    max-width: 100%;
+}
+
+.tarefas {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.473);
+}
+
+.tarefas p {
+    margin-top: 1.5em;
+}
+
+
+
+main {
+    margin-top: 10px;
+    width: 80%;
+    height: calc(60% - 20px);
+    overflow: hidden;
+    max-width: 100%;
+
+}
+
+del {
+    color: green;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; 
+    padding: 2px;
+}
+.tarefas input[type="checkbox"] {
+    /* Ajusta o tamanho dos checkboxes */
+    transform: scale(1.5);
+    margin-right: 10px; /* Adiciona espaço à direita dos checkboxes */
+}
+
+@media screen and (max-width: 600px) {
+    .tarefas input[type="checkbox"] {
+        margin-left: 25px; /* Ajusta a margem direita dos checkboxes */
+    }
+
+    .tarefas p {
+        margin-right: 50px; /* Ajusta a margem direita dos parágrafos para acompanhar os checkboxes */
+    }
+    main{
+    height: calc(55% - 20px);
+    overflow: hidden;
+    }
+}
