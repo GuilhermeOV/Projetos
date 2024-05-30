@@ -69,8 +69,7 @@ header {
 main {
     margin-top: 10px;
     width: 80%;
-    height: calc(60% - 20px);
-    overflow: hidden;
+    height: calc(100% - 250px);
     max-width: 100%;
 
 }
@@ -101,7 +100,11 @@ del {
         margin-right: 50px; /* Ajusta a margem direita dos parágrafos para acompanhar os checkboxes */
     }
     main{
-    height: calc(55% - 20px);
-    overflow: hidden;
+    height: calc(100% - 200px);
     }
+}
+@media screen and (max-width: 400px) {
+    main{
+        height: calc(100% - 250px);
+        }
 }
