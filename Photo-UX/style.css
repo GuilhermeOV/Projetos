@@ -14,13 +14,15 @@ body {
     flex-direction: column;
 }
 
-#back {
+#back img, #back{
     position: fixed;
     top: 10px; /* Ensure visibility */
     left: 10px;
     z-index: 1000;
     cursor: pointer;
-    max-width: 50px;
+    width: 50px;
+    height: 50px;
+    
 }
 
 .conteiner {
@@ -44,13 +46,13 @@ body {
     font-size: 3em;
 }
 
-img {
+.image img {
     max-width: 90vw;
     max-height: 60vh;
     cursor: pointer;
     min-width: 150px;
     min-height: 150px;
-    margin: 10px 0; /* Add margin to avoid overlap */
+    margin: 10px 0;
 }
 
 input[type="file"] {
@@ -127,7 +129,6 @@ h1 {
     }
 
     #back {
-        max-width: 30px;
         top: 10px; /* Adjust top for mobile */
         left: 10px; /* Adjust left for mobile */
         position: fixed;
@@ -189,7 +190,7 @@ h1 {
     }
 
     #back {
-        max-width: 20px;
+
         top: 10px; /* Ensure visibility */
         left: 10px; /* Ensure visibility */
         position: fixed;

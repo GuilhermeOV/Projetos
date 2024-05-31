@@ -30,6 +30,7 @@ form {
 form button, form input {
     margin: 5px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 form input {
@@ -77,11 +78,24 @@ main {
     width: 80%;
     height: calc(100% - 250px);
     max-width: 100%;
+    overflow: hidden;
 
 }
 
 del {
     color: green;
+}
+nav{
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    box-sizing: border-box;
+}
+#back{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
 }
 
 #buttons {
@@ -90,6 +104,9 @@ del {
     align-items: center;
     margin-top: 0px; 
     padding: 2px;
+}
+#buttons button{
+    cursor: pointer;
 }
 .tarefas input[type="checkbox"] {
     /* Ajusta o tamanho dos checkboxes */
@@ -107,6 +124,7 @@ del {
     }
     main{
     height: calc(100% - 200px);
+    overflow: hidden;
     }
     input[type="text"]{
         width: 80%;
@@ -115,8 +133,14 @@ del {
 @media screen and (max-width: 400px) {
     main{
         height: calc(100% - 250px);
+        overflow: hidden;
         }
         input[type="text"]{
             width: 80%;
         }
+}
+@media screen and (max-width:320px) {
+    main{
+        height: calc(100% - 40vh);
+    }
 }
