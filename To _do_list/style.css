@@ -129,6 +129,19 @@ nav{
     input[type="text"]{
         width: 80%;
     }
+    nav{
+        display: flex;
+        justify-content: flex-start;
+        width: 80%;
+        box-sizing: border-box;
+    }
+    #back{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        cursor: pointer;
+    }
+    
 }
 @media screen and (max-width: 400px) {
     main{
@@ -138,9 +151,35 @@ nav{
         input[type="text"]{
             width: 80%;
         }
+        nav{
+            display: flex;
+            justify-content: flex-start;
+            width: 80%;
+            box-sizing: border-box;
+        }
+        #back{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            cursor: pointer;
+        }
+        
 }
 @media screen and (max-width:320px) {
     main{
         height: calc(100% - 40vh);
     }
+    nav{
+        display: flex;
+        justify-content: flex-start;
+        width: 80%;
+        box-sizing: border-box;
+    }
+    #back{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        cursor: pointer;
+    }
+    
 }
