@@ -7,15 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const tarefas = document.getElementById('main');
     const buttons = document.getElementById('buttons');
     const enviar = document.createElement('input');
-                enviar.type = 'submit';
+    enviar.type = 'submit';
+    enviar.value = 'Enviar';
     let paginaAtual = 1;
     let numeroTotalPaginas = 1;
     let box = 0;
+    let tarefaParaEditar = null;
 
-    document.getElementById('formulario').addEventListener('submit',function(e){
-        if ((e.submitter===remove) || (e.submitter===edit) ||(e.submitter===finish))
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+        if ((e.submitter === remove) || (e.submitter === edit) || (e.submitter === finish))
             e.preventDefault();
-    })
+    });
 
     function verificarAltura(Pagina) {
         const altura = tarefas.clientHeight;
@@ -39,20 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const numeroPagina = parseInt(this.textContent);
             NavegarParaPagina(numeroPagina);
         });
-    
-        // Verifica se há tarefas suficientes para criar a próxima página
-        if (NumeroDaPagina < numeroTotalPaginas) {
-            const proximaPaginaElementos = document.getElementById(`Pagina-${NumeroDaPagina + 1}`);
-            if (!proximaPaginaElementos.querySelector('.tarefas')) {
-                proximaPaginaElementos.remove(); // Remove a próxima página se estiver vazia
-                const proximoBotao = document.getElementById(`Botoes-${NumeroDaPagina + 1}`);
-                proximoBotao.remove(); // Remove o botão da próxima página
-            }
-        }
-    
+
         return Pagina;
     }
-    
 
     function NavegarParaPagina(NumeroDaPagina) {
         const Paginas = document.querySelectorAll('.Pagina');
@@ -75,13 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function excluirTarefa(tarefa) {
         const paginaAtualElementos = document.getElementById(`Pagina-${paginaAtual}`);
         tarefa.parentElement.remove(); // Remove a tarefa da página atual
-    
-        // Move as tarefas restantes das páginas seguintes para o final da página anterior
+
         const paginasSeguintes = document.querySelectorAll(`.Pagina`);
         for (let i = paginaAtual + 1; i <= paginasSeguintes.length; i++) {
             const proximaPaginaElementos = document.getElementById(`Pagina-${i}`);
-            if (!proximaPaginaElementos) break; // Se não houver próxima página, sai do loop
-    
+            if (!proximaPaginaElementos) break;
+
             const tarefasProximaPagina = proximaPaginaElementos.querySelectorAll('.tarefas');
             if (tarefasProximaPagina.length > 0) {
                 const primeiraTarefaProximaPagina = tarefasProximaPagina[0];
@@ -89,30 +79,26 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 const proximoBotao = document.getElementById(`Botoes-${i}`);
                 proximaPaginaElementos.remove();
-                proximoBotao.remove(); // Remove o botão da próxima página
+                proximoBotao.remove();
             }
         }
-    
-        // Verifica se a página seguinte está vazia após o movimento de tarefas
+
         const proximaPaginaElementos = document.getElementById(`Pagina-${paginaAtual + 1}`);
         if (proximaPaginaElementos) {
             const tarefasProximaPagina = proximaPaginaElementos.querySelectorAll('.tarefas');
             if (tarefasProximaPagina.length === 0) {
                 const proximoBotao = document.getElementById(`Botoes-${paginaAtual + 1}`);
                 proximaPaginaElementos.remove();
-                proximoBotao.remove(); // Remove o botão da próxima página
+                proximoBotao.remove();
             }
         }
-    
-        // Atualiza a paginação
+
         numeroTotalPaginas = document.querySelectorAll('.Pagina').length;
         if (paginaAtual > numeroTotalPaginas) {
             paginaAtual--;
         }
         NavegarParaPagina(paginaAtual);
     }
-    
-    
 
     function selecionarcheckbox(event) {
         const checkbox = event.target;
@@ -128,9 +114,9 @@ document.addEventListener('DOMContentLoaded', function() {
         remove.addEventListener('click', function(e) {
             e.preventDefault();
             const tarefasSelecionadas = document.querySelectorAll('input[type="checkbox"]:checked');
-    tarefasSelecionadas.forEach(tarefa => {
-        excluirTarefa(tarefa);
-    })
+            tarefasSelecionadas.forEach(tarefa => {
+                excluirTarefa(tarefa);
+            });
         });
 
         edit.addEventListener('click', function(a) {
@@ -145,18 +131,22 @@ document.addEventListener('DOMContentLoaded', function() {
             if (quantidade > 1) {
                 alert("Selecione apenas uma tarefa para ser editada");
             } else if (checkbox.checked) {
-                
+                tarefaParaEditar = paragrafo;
                 header = document.querySelector('header');
                 header.appendChild(enviar);
                 newtarefa.value = paragrafo.textContent;
 
-                enviar.addEventListener('click',function(e){
+                enviar.addEventListener('click', function(e) {
                     e.preventDefault();
-                    paragrafo.textContent = newtarefa.value;
-                    header.removeChild(enviar);
-                    
-                })
-    
+                    editarTarefa();
+                });
+
+                newtarefa.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        editarTarefa();
+                    }
+                });
             }
         });
 
@@ -171,8 +161,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function editarTarefa() {
+        tarefaParaEditar.textContent = newtarefa.value;
+        header.removeChild(enviar);
+        newtarefa.value = '';
+        tarefaParaEditar = null;
+    }
+
     add.addEventListener('click', function(e) {
         e.preventDefault();
+        if (!newtarefa.value){
+            alert('Por favor digite uma tarefa!')
+        }
+        else{
         const div = document.createElement('div');
         div.className = 'tarefas';
 
@@ -197,6 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         ultimaPagina.appendChild(div);
 
-        newtarefa.value = '';
+        newtarefa.value = '';}
     });
 });

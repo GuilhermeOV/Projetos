@@ -76,7 +76,7 @@ header {
 main {
     margin-top: 10px;
     width: 80%;
-    height: calc(100% - 250px);
+    height: calc(100% - 35vh);
     max-width: 100%;
     overflow: hidden;
 
