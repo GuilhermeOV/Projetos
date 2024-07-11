@@ -60,3 +60,8 @@ button:hover{
     border: none;
     background-color: transparent;
 }
+@media screen and (max-width:600px) {
+    header{
+        font-size: 20px;
+    }
+}
