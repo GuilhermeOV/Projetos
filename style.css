@@ -15,14 +15,14 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background-color: var(--cor1);
+    background: linear-gradient(to right, var(--cor1), var(--cor2) ,var(--cor3));
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 section{
-    background-color: var(--cor4);
+    background: linear-gradient(to left, var(--cor4), var(--cor5));
     width: 80vw;
     height: 80vh;
     display: flex;
@@ -46,10 +46,11 @@ article{
 }
 article:hover{
     padding: 30px;
-    background-color: var(--cor1);
+    background: linear-gradient(to bottom, var(--cor1), 60% ,var(--cor5));
 }
 article:hover > a{
-    color: var(--cor5);
+    color: white;
+    text-shadow: 5px 4px 5px;
 }
 a{
     text-decoration: none;
