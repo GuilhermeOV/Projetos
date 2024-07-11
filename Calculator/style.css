@@ -55,3 +55,8 @@ button:hover{
 }
 
 
+#back{
+    align-self: start;
+    border: none;
+    background-color: transparent;
+}
