@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 output.textContent = '';
                 currentOperation = '';
             }
-
+           
+            else if (value === 'Del') {
+                currentOperation = currentOperation.slice(0, -1);
+                output.textContent = currentOperation;
+            } 
             else if (value === '=') {
                 try {
                     output.textContent = eval(currentOperation);

@@ -41,7 +41,7 @@ section{
 }
 
 #res{
-grid-column: 1/4;
+grid-column: 1/3;
 }
 button{
    border: none;
@@ -82,6 +82,7 @@ button:hover{
     width: 200px;
     height: 400px;
     grid-template-columns: repeat(3,1fr);
+    padding: 20px;
    }
    #res,#output{
     font-size: 40px;
